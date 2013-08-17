@@ -1,0 +1,535 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleSourates" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="ruleSourates" scope="public">
+    <tag>out.action=new Object(); </tag>
+    <one-of>
+      <item><ruleref uri="#ruleVLC"/><tag>out.action = rules.ruleVLC;</tag></item>
+      <item><ruleref uri="#ruleSerie"/><tag>out.action = rules.ruleSerie;</tag></item>
+    </one-of>
+    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/plugins/sourates";</tag>
+  </rule>
+  
+    <rule id="ruleVLC">
+    <example>Sarah Démarre VLC </example>
+	<item weight="7">Sarah</item>
+	<one-of>
+		<item>Démarre<tag>out._key="RunVLC";</tag></item>
+		<item>Ferme<tag>out._key="CloseVLC";</tag></item>
+        <item>met en pause<tag>out._key="pl_forcepause";</tag></item>
+		<item>remet en lecture<tag>out._key="pl_forceresume";</tag></item>
+		<item>Met en pleine écran<tag>out._key="fullscreen ";</tag></item>
+		<item>Enlève le pleine écran<tag>out._key="fullscreen";</tag></item>
+		<item>remet le son de<tag>out._key="normalSound";</tag></item>
+		<item>coupe le son de<tag>out._key="noSound";</tag></item>
+		<item>augmente le son de<tag>out._key="highSound";</tag></item>
+		<item>baisse le son de<tag>out._key="lowSound";</tag></item>
+		<item>Avance de 10 secondes<tag>out._key="Forward10";</tag></item>
+		<item>plus 10 secondes<tag>out._key="Forward10";</tag></item>
+		<item>Avance de 30 secondes<tag>out._key="Forward30";</tag></item>
+		<item>plus 30 secondes<tag>out._key="Forward30";</tag></item>
+		<item>Avance d'une minute<tag>out._key="Forward60";</tag></item>
+		<item>plus une minute<tag>out._key="Forward60";</tag></item>
+		<item>Recule de dix secondes<tag>out._key="Back10";</tag></item>
+		<item>moins 10 secondes<tag>out._key="Back10";</tag></item>
+		<item>Recule de 30 secondes<tag>out._key="Back30";</tag></item>
+		<item>moins 30 secondes<tag>out._key="Back30";</tag></item>
+		<item>Recule d'une minute<tag>out._key="Back60";</tag></item>		
+		<item>moins 1 minute<tag>out._key="Back60";</tag></item>
+		
+	</one-of>
+	<item weight="7">le coran</item>
+  </rule>
+ 
+  <rule id="ruleSerie">
+	<example>écouter une sourate</example>
+	<item weight="7">Sarah</item>
+    <one-of>
+      <item>fait moi écouter la sourate</item>
+    </one-of>
+    <ruleref uri="#ruleVLCName"/>
+  </rule>
+  
+<!-- Automatic Generation § -->
+<rule id="ruleVLCName">
+  <tag>out._key="RunVLC";</tag>
+  <one-of>
+
+    <item>de l'ouverture<tag>out.vlcFile="plugins/sourates/mp3/1.mp3";</tag></item>
+    <item>fati ha<tag>out.vlcFile="plugins/sourates/mp3/1.mp3";</tag></item>
+    <item>numéro une<tag>out.vlcFile="plugins/sourates/mp3/1.mp3";</tag></item>
+	
+    <item>la vache<tag>out.vlcFile="plugins/sourates/mp3/2_1.mp3";</tag></item>
+	<item>la vache première partie<tag>out.vlcFile="plugins/sourates/mp3/2_1.mp3";</tag></item>
+    <item>baqala<tag>out.vlcFile="plugins/sourates/mp3/2_1.mp3";</tag></item>
+	<item>baqara première partie<tag>out.vlcFile="plugins/sourates/mp3/2_1.mp3";</tag></item>
+    <item>numéro deux<tag>out.vlcFile="plugins/sourates/mp3/2_1.mp3";</tag></item>
+	<item>numéro deux premère partie<tag>out.vlcFile="plugins/sourates/mp3/2_1.mp3";</tag></item>
+	
+	<item>la vache deuxième partie<tag>out.vlcFile="plugins/sourates/mp3/2_2.mp3";</tag></item>
+    <item>baqala deuxième partie<tag>out.vlcFile="plugins/sourates/mp3/2_2.mp3";</tag></item>
+    <item>numéro deux deuxième partie<tag>out.vlcFile="plugins/sourates/mp3/2_2.mp3";</tag></item>
+
+	<item>la vache troisième partie partie<tag>out.vlcFile="plugins/sourates/mp3/2_3.mp3";</tag></item>
+    <item>baqala troisième partie<tag>out.vlcFile="plugins/sourates/mp3/2_3.mp3";</tag></item>
+    <item>numéro deux troisième partie<tag>out.vlcFile="plugins/sourates/mp3/2_3.mp3";</tag></item>
+
+	<item>la vache quatrième partie partie<tag>out.vlcFile="plugins/sourates/mp3/2_4.mp3";</tag></item>
+    <item>baqala quatrième partie<tag>out.vlcFile="plugins/sourates/mp3/2_4.mp3";</tag></item>
+    <item>numéro deux quatrième partie<tag>out.vlcFile="plugins/sourates/mp3/2_4.mp3";</tag></item>	
+
+	<item>la vache cinquième partie partie<tag>out.vlcFile="plugins/sourates/mp3/2_5.mp3";</tag></item>
+    <item>baqala cinquième partie<tag>out.vlcFile="plugins/sourates/mp3/2_5.mp3";</tag></item>
+    <item>numéro deux cinquième partie<tag>out.vlcFile="plugins/sourates/mp3/2_5.mp3";</tag></item>	
+
+	<item>la vache sixième partie partie<tag>out.vlcFile="plugins/sourates/mp3/2_6.mp3";</tag></item>
+    <item>baqala sixième partie<tag>out.vlcFile="plugins/sourates/mp3/2_6.mp3";</tag></item>
+    <item>numéro deux sixième partie<tag>out.vlcFile="plugins/sourates/mp3/2_6.mp3";</tag></item>	
+
+	<item>la vache septième partie partie<tag>out.vlcFile="plugins/sourates/mp3/2_7.mp3";</tag></item>
+    <item>baqala septième partie<tag>out.vlcFile="plugins/sourates/mp3/2_7.mp3";</tag></item>
+    <item>numéro deux septième partie<tag>out.vlcFile="plugins/sourates/mp3/2_7.mp3";</tag></item>	
+
+	<item>la vache huitième partie partie<tag>out.vlcFile="plugins/sourates/mp3/2_8.mp3";</tag></item>
+    <item>baqala huitième partie<tag>out.vlcFile="plugins/sourates/mp3/2_8.mp3";</tag></item>
+    <item>numéro deux huitième partie<tag>out.vlcFile="plugins/sourates/mp3/2_8.mp3";</tag></item>	
+
+    <item>la famille Imranne<tag>out.vlcFile="plugins/sourates/mp3/3.mp3";</tag></item>
+	<item>Ali Imranne<tag>out.vlcFile="plugins/sourates/mp3/3.mp3";</tag></item>
+    <item>Imranne<tag>out.vlcFile="plugins/sourates/mp3/3.mp3";</tag></item>
+    <item>numéro trois<tag>out.vlcFile="plugins/sourates/mp3/3.mp3";</tag></item>
+	
+    <item>les femmes<tag>out.vlcFile="plugins/sourates/mp3/4.mp3";</tag></item>
+	<item>nissa<tag>out.vlcFile="plugins/sourates/mp3/4.mp3";</tag></item>
+	<item>numéro quatres<tag>out.vlcFile="plugins/sourates/mp3/4.mp3";</tag></item>
+
+    <item>la table servie<tag>out.vlcFile="plugins/sourates/mp3/5.mp3";</tag></item>
+	<item>maïda<tag>out.vlcFile="plugins/sourates/mp3/5.mp3";</tag></item>
+	<item>el maïda<tag>out.vlcFile="plugins/sourates/mp3/5.mp3";</tag></item>
+	<item>numéro cinq<tag>out.vlcFile="plugins/sourates/mp3/5.mp3";</tag></item>
+	
+    <item>du bétail<tag>out.vlcFile="plugins/sourates/mp3/6.mp3";</tag></item>
+	<item>des animaux<tag>out.vlcFile="plugins/sourates/mp3/6.mp3";</tag></item>
+	<item>el an am<tag>out.vlcFile="plugins/sourates/mp3/6.mp3";</tag></item>
+	<item>numéro six<tag>out.vlcFile="plugins/sourates/mp3/6.mp3";</tag></item>	
+
+    <item>el araf<tag>out.vlcFile="plugins/sourates/mp3/7.mp3";</tag></item>
+	<item>numéro sept<tag>out.vlcFile="plugins/sourates/mp3/7.mp3";</tag></item>	
+
+    <item>le butin<tag>out.vlcFile="plugins/sourates/mp3/8.mp3";</tag></item>
+	<item>Al Anfal<tag>out.vlcFile="plugins/sourates/mp3/8.mp3";</tag></item>	
+	<item>numéro huit<tag>out.vlcFile="plugins/sourates/mp3/8.mp3";</tag></item>
+
+	<item>Le repentir<tag>out.vlcFile="plugins/sourates/mp3/9.mp3";</tag></item>
+	<item>At-Tawbah<tag>out.vlcFile="plugins/sourates/mp3/9.mp3";</tag></item>
+<item>numéro neuf<tag>out.vlcFile="plugins/sourates/mp3/9.mp3";</tag></item>
+
+	<item>jonas<tag>out.vlcFile="plugins/sourates/mp3/10.mp3";</tag></item>
+<item>numéro dix<tag>out.vlcFile="plugins/sourates/mp3/10.mp3";</tag></item>
+
+	<item>Houd<tag>out.vlcFile="plugins/sourates/mp3/11.mp3";</tag></item>
+<item>numéro onze<tag>out.vlcFile="plugins/sourates/mp3/11.mp3";</tag></item>
+
+	<item>Joseph<tag>out.vlcFile="plugins/sourates/mp3/12.mp3";</tag></item>
+<item>Youssouf<tag>out.vlcFile="plugins/sourates/mp3/12.mp3";</tag></item>
+<item>numéro douze<tag>out.vlcFile="plugins/sourates/mp3/12.mp3";</tag></item>
+
+<item>Le tonnerre<tag>out.vlcFile="plugins/sourates/mp3/13.mp3";</tag></item>
+<item>Ar-Raad<tag>out.vlcFile="plugins/sourates/mp3/13.mp3";</tag></item>
+<item>numéro treize<tag>out.vlcFile="plugins/sourates/mp3/13.mp3";</tag></item>
+
+<item>Abraham<tag>out.vlcFile="plugins/sourates/mp3/14.mp3";</tag></item>
+<item>Ibrahim<tag>out.vlcFile="plugins/sourates/mp3/14.mp3";</tag></item>
+<item>numéro quatorze<tag>out.vlcFile="plugins/sourates/mp3/14.mp3";</tag></item>
+
+<item>Al-Hijr<tag>out.vlcFile="plugins/sourates/mp3/15.mp3";</tag></item>
+<item>numéro quinze<tag>out.vlcFile="plugins/sourates/mp3/15.mp3";</tag></item>
+
+<item>Les abeilles<tag>out.vlcFile="plugins/sourates/mp3/16.mp3";</tag></item>
+<item>An-Nahl<tag>out.vlcFile="plugins/sourates/mp3/16.mp3";</tag></item>
+<item>numéro seize<tag>out.vlcFile="plugins/sourates/mp3/16.mp3";</tag></item>
+
+<item>Le voyage nocturne<tag>out.vlcFile="plugins/sourates/mp3/17.mp3";</tag></item>
+<item>Al-Isra<tag>out.vlcFile="plugins/sourates/mp3/17.mp3";</tag></item>
+<item>numéro dix-sept<tag>out.vlcFile="plugins/sourates/mp3/17.mp3";</tag></item>
+
+    <item>la caverne<tag>out.vlcFile="plugins/sourates/mp3/18.mp3";</tag></item>
+	<item>kÃ¨f<tag>out.vlcFile="plugins/sourates/mp3/18.mp3";</tag></item>
+	<item>numÃ©ro dix huit<tag>out.vlcFile="plugins/sourates/mp3/18.mp3";</tag></item>
+<item>numéro dix-huit<tag>out.vlcFile="plugins/sourates/mp3/18.mp3";</tag></item>
+
+<item>Marie<tag>out.vlcFile="plugins/sourates/mp3/19.mp3";</tag></item>
+<item>Maryam<tag>out.vlcFile="plugins/sourates/mp3/19.mp3";</tag></item>
+<item>numéro dix-neuf<tag>out.vlcFile="plugins/sourates/mp3/19.mp3";</tag></item>
+
+<item>Ta-Ha<tag>out.vlcFile="plugins/sourates/mp3/20.mp3";</tag></item>
+<item>numéro vingt<tag>out.vlcFile="plugins/sourates/mp3/20.mp3";</tag></item>
+
+<item>Les prophÃ¨tes<tag>out.vlcFile="plugins/sourates/mp3/21.mp3";</tag></item>
+<item>Al-Anbiya<tag>out.vlcFile="plugins/sourates/mp3/21.mp3";</tag></item>
+<item>numéro vingt-et-un<tag>out.vlcFile="plugins/sourates/mp3/21.mp3";</tag></item>
+
+<item>Le pÃ¨lerinage<tag>out.vlcFile="plugins/sourates/mp3/22.mp3";</tag></item>
+<item>Al-Hajj<tag>out.vlcFile="plugins/sourates/mp3/22.mp3";</tag></item>
+<item>numéro vingt-deux<tag>out.vlcFile="plugins/sourates/mp3/22.mp3";</tag></item>
+
+<item>Les croyants<tag>out.vlcFile="plugins/sourates/mp3/23.mp3";</tag></item>
+<item>Al-Muminune<tag>out.vlcFile="plugins/sourates/mp3/23.mp3";</tag></item>
+<item>numéro vingt-trois<tag>out.vlcFile="plugins/sourates/mp3/23.mp3";</tag></item>
+
+<item>La lumiÃ¨re<tag>out.vlcFile="plugins/sourates/mp3/24.mp3";</tag></item>
+<item>An-Nur<tag>out.vlcFile="plugins/sourates/mp3/24.mp3";</tag></item>
+<item>numéro vingt-quatre<tag>out.vlcFile="plugins/sourates/mp3/24.mp3";</tag></item>
+
+<item>Le discernement<tag>out.vlcFile="plugins/sourates/mp3/25.mp3";</tag></item>
+<item>Al Furqane<tag>out.vlcFile="plugins/sourates/mp3/25.mp3";</tag></item>
+<item>numéro vingt-cinq<tag>out.vlcFile="plugins/sourates/mp3/25.mp3";</tag></item>
+
+<item>Les poÃ¨tes<tag>out.vlcFile="plugins/sourates/mp3/26.mp3";</tag></item>
+<item>As-Shuaraa<tag>out.vlcFile="plugins/sourates/mp3/26.mp3";</tag></item>
+<item>numéro vingt-six<tag>out.vlcFile="plugins/sourates/mp3/26.mp3";</tag></item>
+
+<item>Les fourmis<tag>out.vlcFile="plugins/sourates/mp3/27.mp3";</tag></item>
+<item>An-Naml<tag>out.vlcFile="plugins/sourates/mp3/27.mp3";</tag></item>
+<item>numéro vingt-sept<tag>out.vlcFile="plugins/sourates/mp3/27.mp3";</tag></item>
+
+<item>Le rÃ¨cit<tag>out.vlcFile="plugins/sourates/mp3/28.mp3";</tag></item>
+<item>Al-Qasas<tag>out.vlcFile="plugins/sourates/mp3/28.mp3";</tag></item>
+<item>numéro vingt-huit<tag>out.vlcFile="plugins/sourates/mp3/28.mp3";</tag></item>
+
+<item>L'araignÃ¨e<tag>out.vlcFile="plugins/sourates/mp3/29.mp3";</tag></item>
+<item>Al-Ankabut<tag>out.vlcFile="plugins/sourates/mp3/29.mp3";</tag></item>
+<item>numéro vingt-neuf<tag>out.vlcFile="plugins/sourates/mp3/29.mp3";</tag></item>
+
+<item>Les romains<tag>out.vlcFile="plugins/sourates/mp3/30.mp3";</tag></item>
+<item>Ar-Rum<tag>out.vlcFile="plugins/sourates/mp3/30.mp3";</tag></item>
+<item>numéro trente<tag>out.vlcFile="plugins/sourates/mp3/30.mp3";</tag></item>
+
+<item>Louqman<tag>out.vlcFile="plugins/sourates/mp3/31.mp3";</tag></item>
+<item>numéro trente-et-un<tag>out.vlcFile="plugins/sourates/mp3/31.mp3";</tag></item>
+
+<item>Le prosternation<tag>out.vlcFile="plugins/sourates/mp3/32.mp3";</tag></item>
+<item>As-Sajda<tag>out.vlcFile="plugins/sourates/mp3/32.mp3";</tag></item>
+<item>numéro trente-deux<tag>out.vlcFile="plugins/sourates/mp3/32.mp3";</tag></item>
+
+<item>Les coalisÃ¨s<tag>out.vlcFile="plugins/sourates/mp3/33.mp3";</tag></item>
+<item>Al-Ahzab<tag>out.vlcFile="plugins/sourates/mp3/33.mp3";</tag></item>
+<item>numéro trente-trois<tag>out.vlcFile="plugins/sourates/mp3/33.mp3";</tag></item>
+
+<item>Saba<tag>out.vlcFile="plugins/sourates/mp3/34.mp3";</tag></item>
+<item>numéro trente-quatre<tag>out.vlcFile="plugins/sourates/mp3/34.mp3";</tag></item>
+
+<item>Le CrÃ¨ateur<tag>out.vlcFile="plugins/sourates/mp3/35.mp3";</tag></item>
+<item>Fatir<tag>out.vlcFile="plugins/sourates/mp3/35.mp3";</tag></item>
+<item>numéro trente-cinq<tag>out.vlcFile="plugins/sourates/mp3/35.mp3";</tag></item>
+
+<item>Ya-Sin<tag>out.vlcFile="plugins/sourates/mp3/36.mp3";</tag></item>
+<item>numéro trente-six<tag>out.vlcFile="plugins/sourates/mp3/36.mp3";</tag></item>
+
+<item>Les rangÃ©s<tag>out.vlcFile="plugins/sourates/mp3/37.mp3";</tag></item>
+<item>As-Saffat<tag>out.vlcFile="plugins/sourates/mp3/37.mp3";</tag></item>
+<item>numéro trente-sept<tag>out.vlcFile="plugins/sourates/mp3/37.mp3";</tag></item>
+
+<item>Sad<tag>out.vlcFile="plugins/sourates/mp3/38.mp3";</tag></item>
+<item>numéro trente-huit<tag>out.vlcFile="plugins/sourates/mp3/38.mp3";</tag></item>
+
+<item>Les groupes<tag>out.vlcFile="plugins/sourates/mp3/39.mp3";</tag></item>
+<item>Az-Zumar<tag>out.vlcFile="plugins/sourates/mp3/39.mp3";</tag></item>
+<item>numéro trente-neuf<tag>out.vlcFile="plugins/sourates/mp3/39.mp3";</tag></item>
+
+<item>Le pardonneur<tag>out.vlcFile="plugins/sourates/mp3/40.mp3";</tag></item>
+<item> Gafir<tag>out.vlcFile="plugins/sourates/mp3/40.mp3";</tag></item>
+<item>numéro quarante<tag>out.vlcFile="plugins/sourates/mp3/40.mp3";</tag></item>
+
+<item>Les versets dÃ©taillÃ©s<tag>out.vlcFile="plugins/sourates/mp3/41.mp3";</tag></item>
+<item>Fussilat<tag>out.vlcFile="plugins/sourates/mp3/41.mp3";</tag></item>
+<item>numéro quarante-et-un<tag>out.vlcFile="plugins/sourates/mp3/41.mp3";</tag></item>
+
+<item>La consultation<tag>out.vlcFile="plugins/sourates/mp3/42.mp3";</tag></item>
+<item>Achoura<tag>out.vlcFile="plugins/sourates/mp3/42.mp3";</tag></item>
+<item>numéro quarante-deux<tag>out.vlcFile="plugins/sourates/mp3/42.mp3";</tag></item>
+
+<item>L'ornement<tag>out.vlcFile="plugins/sourates/mp3/43.mp3";</tag></item>
+<item>Azzukhruf<tag>out.vlcFile="plugins/sourates/mp3/43.mp3";</tag></item>
+<item>numéro quarante-trois<tag>out.vlcFile="plugins/sourates/mp3/43.mp3";</tag></item>
+
+<item>La fumÃ©e<tag>out.vlcFile="plugins/sourates/mp3/44.mp3";</tag></item>
+<item>Ad-Dukhan<tag>out.vlcFile="plugins/sourates/mp3/44.mp3";</tag></item>
+<item>numéro quarante-quatre<tag>out.vlcFile="plugins/sourates/mp3/44.mp3";</tag></item>
+
+<item>L'agenouillÃ©e<tag>out.vlcFile="plugins/sourates/mp3/45.mp3";</tag></item>
+<item>Al-Jathya<tag>out.vlcFile="plugins/sourates/mp3/45.mp3";</tag></item>
+<item>numéro quarante-cinq<tag>out.vlcFile="plugins/sourates/mp3/45.mp3";</tag></item>
+
+<item>Al-Ahqaf<tag>out.vlcFile="plugins/sourates/mp3/46.mp3";</tag></item>
+<item>numéro quarante-six<tag>out.vlcFile="plugins/sourates/mp3/46.mp3";</tag></item>
+
+<item>Mouhammad<tag>out.vlcFile="plugins/sourates/mp3/47.mp3";</tag></item>
+<item>numéro quarante-sept<tag>out.vlcFile="plugins/sourates/mp3/47.mp3";</tag></item>
+
+<item>LA MISSION du PROPHETE MOHAMMED<tag>out.vlcFile="plugins/sourates/mp3/48.mp3";</tag></item>
+<item>numéro quarante-huit<tag>out.vlcFile="plugins/sourates/mp3/48.mp3";</tag></item>
+
+<item> Les appartements<tag>out.vlcFile="plugins/sourates/mp3/49.mp3";</tag></item>
+<item>Al-Hujurat<tag>out.vlcFile="plugins/sourates/mp3/49.mp3";</tag></item>
+<item>numéro quarante-neuf<tag>out.vlcFile="plugins/sourates/mp3/49.mp3";</tag></item>
+
+<item> Qaf<tag>out.vlcFile="plugins/sourates/mp3/50.mp3";</tag></item>
+<item>numéro cinquante<tag>out.vlcFile="plugins/sourates/mp3/50.mp3";</tag></item>
+
+<item> Qui Ã©parpillent (Ad-Dariy<tag>out.vlcFile="plugins/sourates/mp3/51.mp3";</tag></item>
+<item>numéro cinquante-et-un<tag>out.vlcFile="plugins/sourates/mp3/51.mp3";</tag></item>
+
+<item> At-Tur<tag>out.vlcFile="plugins/sourates/mp3/52.mp3";</tag></item>
+<item>numéro cinquante-deux<tag>out.vlcFile="plugins/sourates/mp3/52.mp3";</tag></item>
+
+<item>L'Ã©toile<tag>out.vlcFile="plugins/sourates/mp3/53.mp3";</tag></item>
+<item>An-Najm<tag>out.vlcFile="plugins/sourates/mp3/53.mp3";</tag></item>
+<item>numéro cinquante-trois<tag>out.vlcFile="plugins/sourates/mp3/53.mp3";</tag></item>
+
+<item>La lune<tag>out.vlcFile="plugins/sourates/mp3/54.mp3";</tag></item>
+<item>Al-Qamar<tag>out.vlcFile="plugins/sourates/mp3/54.mp3";</tag></item>
+<item>numéro cinquante-quatre<tag>out.vlcFile="plugins/sourates/mp3/54.mp3";</tag></item>
+
+<item>Le Tout MisÃ©ricordieux<tag>out.vlcFile="plugins/sourates/mp3/55.mp3";</tag></item>
+<item>Ar-Rahman<tag>out.vlcFile="plugins/sourates/mp3/55.mp3";</tag></item>
+<item>numéro cinquante-cinq<tag>out.vlcFile="plugins/sourates/mp3/55.mp3";</tag></item>
+
+<item>L'evÃ©nement<tag>out.vlcFile="plugins/sourates/mp3/56.mp3";</tag></item>
+<item>Al-Waqi'a<tag>out.vlcFile="plugins/sourates/mp3/56.mp3";</tag></item>
+<item>numéro cinquante-six<tag>out.vlcFile="plugins/sourates/mp3/56.mp3";</tag></item>
+
+<item>Le fer<tag>out.vlcFile="plugins/sourates/mp3/57.mp3";</tag></item>
+<item>Al-Hadid<tag>out.vlcFile="plugins/sourates/mp3/57.mp3";</tag></item>
+<item>numéro cinquante-sept<tag>out.vlcFile="plugins/sourates/mp3/57.mp3";</tag></item>
+
+<item>La discussion<tag>out.vlcFile="plugins/sourates/mp3/58.mp3";</tag></item>
+<item>Al-Mujadalah<tag>out.vlcFile="plugins/sourates/mp3/58.mp3";</tag></item>
+<item>numéro cinquante-huit<tag>out.vlcFile="plugins/sourates/mp3/58.mp3";</tag></item>
+
+<item>L'exode<tag>out.vlcFile="plugins/sourates/mp3/59.mp3";</tag></item>
+<item>Al-Hasr<tag>out.vlcFile="plugins/sourates/mp3/59.mp3";</tag></item>
+<item>numéro cinquante-neuf<tag>out.vlcFile="plugins/sourates/mp3/59.mp3";</tag></item>
+
+<item>L'Ã©prouvÃ©e<tag>out.vlcFile="plugins/sourates/mp3/60.mp3";</tag></item>
+<item>Al-Mumtahanah<tag>out.vlcFile="plugins/sourates/mp3/60.mp3";</tag></item>
+<item>numéro soixante<tag>out.vlcFile="plugins/sourates/mp3/60.mp3";</tag></item>
+
+<item>Le rang<tag>out.vlcFile="plugins/sourates/mp3/61.mp3";</tag></item>
+<item>As-Saff<tag>out.vlcFile="plugins/sourates/mp3/61.mp3";</tag></item>
+<item>numéro soixante-et-un<tag>out.vlcFile="plugins/sourates/mp3/61.mp3";</tag></item>
+
+<item>Le vendredi<tag>out.vlcFile="plugins/sourates/mp3/62.mp3";</tag></item>
+<item>Al-Jumua<tag>out.vlcFile="plugins/sourates/mp3/62.mp3";</tag></item>
+<item>numéro soixante-deux<tag>out.vlcFile="plugins/sourates/mp3/62.mp3";</tag></item>
+
+<item>Les hypocrites<tag>out.vlcFile="plugins/sourates/mp3/63.mp3";</tag></item>
+<item>Al-Munafiqun<tag>out.vlcFile="plugins/sourates/mp3/63.mp3";</tag></item>
+<item>numéro soixante-trois<tag>out.vlcFile="plugins/sourates/mp3/63.mp3";</tag></item>
+
+<item>La grande perte<tag>out.vlcFile="plugins/sourates/mp3/64.mp3";</tag></item>
+<item>At-Tagabun<tag>out.vlcFile="plugins/sourates/mp3/64.mp3";</tag></item>
+<item>numéro soixante-quatre<tag>out.vlcFile="plugins/sourates/mp3/64.mp3";</tag></item>
+
+<item>Le divorce<tag>out.vlcFile="plugins/sourates/mp3/65.mp3";</tag></item>
+<item>At-Talaq<tag>out.vlcFile="plugins/sourates/mp3/65.mp3";</tag></item>
+<item>numéro soixante-cinq<tag>out.vlcFile="plugins/sourates/mp3/65.mp3";</tag></item>
+
+<item>L'interdiction<tag>out.vlcFile="plugins/sourates/mp3/66.mp3";</tag></item>
+<item>At-Tahrim<tag>out.vlcFile="plugins/sourates/mp3/66.mp3";</tag></item>
+<item>numéro soixante-six<tag>out.vlcFile="plugins/sourates/mp3/66.mp3";</tag></item>
+
+	<item>la royautÃ©<tag>out.vlcFile="plugins/sourates/mp3/18.mp3";</tag></item>
+	<item>moulk<tag>out.vlcFile="plugins/sourates/mp3/67.mp3";</tag></item>
+	<item>numÃ©ro soixante sept<tag>out.vlcFile="plugins/sourates/mp3/67.mp3";</tag></item>
+<item>numéro soixante-sept<tag>out.vlcFile="plugins/sourates/mp3/67.mp3";</tag></item>
+
+<item>numéro soixante-huit<tag>out.vlcFile="plugins/sourates/mp3/68.mp3";</tag></item>
+
+	<item>La plume<tag>out.vlcFile="plugins/sourates/mp3/68.mp3";</tag></item>
+	<item>El kalÃ¨m <tag>out.vlcFile="plugins/sourates/mp3/68.mp3";</tag></item>
+	
+<item>Celle qui montre la vÃ©ritÃ©<tag>out.vlcFile="plugins/sourates/mp3/69.mp3";</tag></item>
+<item>numéro soixante-neuf<tag>out.vlcFile="plugins/sourates/mp3/69.mp3";</tag></item>
+
+<item>Les voies d'ascension<tag>out.vlcFile="plugins/sourates/mp3/70.mp3";</tag></item>
+<item>Al- Maarij<tag>out.vlcFile="plugins/sourates/mp3/70.mp3";</tag></item>
+<item>numéro soixante-dix<tag>out.vlcFile="plugins/sourates/mp3/70.mp3";</tag></item>
+
+<item>NoÃ©<tag>out.vlcFile="plugins/sourates/mp3/71.mp3";</tag></item>
+<item>Nuh<tag>out.vlcFile="plugins/sourates/mp3/71.mp3";</tag></item>
+<item>numéro soixante-et-onze<tag>out.vlcFile="plugins/sourates/mp3/71.mp3";</tag></item>
+
+<item>Les djinns<tag>out.vlcFile="plugins/sourates/mp3/72.mp3";</tag></item>
+<item>Al-Jinn<tag>out.vlcFile="plugins/sourates/mp3/72.mp3";</tag></item>
+<item>numéro soixante-douze<tag>out.vlcFile="plugins/sourates/mp3/72.mp3";</tag></item>
+
+<item>L'enveloppÃ©<tag>out.vlcFile="plugins/sourates/mp3/73.mp3";</tag></item>
+<item>Al-Muzzamil<tag>out.vlcFile="plugins/sourates/mp3/73.mp3";</tag></item>
+<item>numéro soixante-treize<tag>out.vlcFile="plugins/sourates/mp3/73.mp3";</tag></item>
+
+<item>Le revÃªtu d'un manteau<tag>out.vlcFile="plugins/sourates/mp3/74.mp3";</tag></item>
+<item>Al-Muddattir<tag>out.vlcFile="plugins/sourates/mp3/74.mp3";</tag></item>
+<item>numéro soixante-quatorze<tag>out.vlcFile="plugins/sourates/mp3/74.mp3";</tag></item>
+
+<item>La rÃ©surrection<tag>out.vlcFile="plugins/sourates/mp3/75.mp3";</tag></item>
+<item>Al-Qiyamah<tag>out.vlcFile="plugins/sourates/mp3/75.mp3";</tag></item>
+<item>numéro soixante-quinze<tag>out.vlcFile="plugins/sourates/mp3/75.mp3";</tag></item>
+
+<item>L'homme<tag>out.vlcFile="plugins/sourates/mp3/76.mp3";</tag></item>
+<item>Al-Insan<tag>out.vlcFile="plugins/sourates/mp3/76.mp3";</tag></item>
+<item>numéro soixante-seize<tag>out.vlcFile="plugins/sourates/mp3/76.mp3";</tag></item>
+
+<item>Les envoyÃ©s<tag>out.vlcFile="plugins/sourates/mp3/77.mp3";</tag></item>
+<item>Al-Mursalate<tag>out.vlcFile="plugins/sourates/mp3/77.mp3";</tag></item>
+<item>numéro soixante-dix-sept<tag>out.vlcFile="plugins/sourates/mp3/77.mp3";</tag></item>
+
+<item>La nouvelle<tag>out.vlcFile="plugins/sourates/mp3/78.mp3";</tag></item>
+<item>An-Naba<tag>out.vlcFile="plugins/sourates/mp3/78.mp3";</tag></item>
+<item>numéro soixante-dix-huit<tag>out.vlcFile="plugins/sourates/mp3/78.mp3";</tag></item>
+
+<item>Les anges qui arrachent les Ã¢mes<tag>out.vlcFile="plugins/sourates/mp3/79.mp3";</tag></item>
+<item>An-Naziate<tag>out.vlcFile="plugins/sourates/mp3/79.mp3";</tag></item>
+<item>numéro soixante-dix-neuf<tag>out.vlcFile="plugins/sourates/mp3/79.mp3";</tag></item>
+
+<item>Il s'est renfrognÃ©<tag>out.vlcFile="plugins/sourates/mp3/80.mp3";</tag></item>
+<item>Abasa<tag>out.vlcFile="plugins/sourates/mp3/80.mp3";</tag></item>
+<item>numéro quatre-vingts<tag>out.vlcFile="plugins/sourates/mp3/80.mp3";</tag></item>
+
+<item>L'obscurcissement<tag>out.vlcFile="plugins/sourates/mp3/81.mp3";</tag></item>
+<item>At-Takwir<tag>out.vlcFile="plugins/sourates/mp3/81.mp3";</tag></item>
+<item>numéro quatre-vingt-un<tag>out.vlcFile="plugins/sourates/mp3/81.mp3";</tag></item>
+
+<item>La rupture<tag>out.vlcFile="plugins/sourates/mp3/82.mp3";</tag></item>
+<item>Al-Infitar<tag>out.vlcFile="plugins/sourates/mp3/82.mp3";</tag></item>
+<item>numéro quatre-vingt-deux<tag>out.vlcFile="plugins/sourates/mp3/82.mp3";</tag></item>
+
+<item>Les fraudeurs<tag>out.vlcFile="plugins/sourates/mp3/83.mp3";</tag></item>
+<item>Al-Mutaffifune<tag>out.vlcFile="plugins/sourates/mp3/83.mp3";</tag></item>
+<item>numéro quatre-vingt-trois<tag>out.vlcFile="plugins/sourates/mp3/83.mp3";</tag></item>
+
+<item>La dÃ©chirure<tag>out.vlcFile="plugins/sourates/mp3/84.mp3";</tag></item>
+<item>Al-Insiqaq<tag>out.vlcFile="plugins/sourates/mp3/84.mp3";</tag></item>
+<item>numéro quatre-vingt-quatre<tag>out.vlcFile="plugins/sourates/mp3/84.mp3";</tag></item>
+
+<item>Les constellations<tag>out.vlcFile="plugins/sourates/mp3/85.mp3";</tag></item>
+<item>Al-Buruj<tag>out.vlcFile="plugins/sourates/mp3/85.mp3";</tag></item>
+<item>numéro quatre-vingt-cinq<tag>out.vlcFile="plugins/sourates/mp3/85.mp3";</tag></item>
+
+<item>L'astre nocturne<tag>out.vlcFile="plugins/sourates/mp3/86.mp3";</tag></item>
+<item>At-Tariq<tag>out.vlcFile="plugins/sourates/mp3/86.mp3";</tag></item>
+<item>numéro quatre-vingt-six<tag>out.vlcFile="plugins/sourates/mp3/86.mp3";</tag></item>
+
+<item>Le TrÃ¨s-Haut<tag>out.vlcFile="plugins/sourates/mp3/87.mp3";</tag></item>
+<item>Al-Ala<tag>out.vlcFile="plugins/sourates/mp3/87.mp3";</tag></item>
+<item>numéro quatre-vingt-sept<tag>out.vlcFile="plugins/sourates/mp3/87.mp3";</tag></item>
+
+<item>L'enveloppante<tag>out.vlcFile="plugins/sourates/mp3/88.mp3";</tag></item>
+<item>Al-Gasiyah<tag>out.vlcFile="plugins/sourates/mp3/88.mp3";</tag></item>
+<item>numéro quatre-vingt-huit<tag>out.vlcFile="plugins/sourates/mp3/88.mp3";</tag></item>
+
+<item>L'aube<tag>out.vlcFile="plugins/sourates/mp3/89.mp3";</tag></item>
+<item>Al-Fajr<tag>out.vlcFile="plugins/sourates/mp3/89.mp3";</tag></item>
+<item>numéro quatre-vingt-neuf<tag>out.vlcFile="plugins/sourates/mp3/89.mp3";</tag></item>
+
+<item>La citÃ©<tag>out.vlcFile="plugins/sourates/mp3/90.mp3";</tag></item>
+<item>Al-Balad<tag>out.vlcFile="plugins/sourates/mp3/90.mp3";</tag></item>
+<item>numéro quatre-vingt-dix<tag>out.vlcFile="plugins/sourates/mp3/90.mp3";</tag></item>
+
+<item> Le soleil<tag>out.vlcFile="plugins/sourates/mp3/91.mp3";</tag></item>
+<item>Ach-Chams<tag>out.vlcFile="plugins/sourates/mp3/91.mp3";</tag></item>
+<item>numéro quatre-vingt-onze<tag>out.vlcFile="plugins/sourates/mp3/91.mp3";</tag></item>
+
+<item>La nuit<tag>out.vlcFile="plugins/sourates/mp3/92.mp3";</tag></item>
+<item>Al-Layl<tag>out.vlcFile="plugins/sourates/mp3/92.mp3";</tag></item>
+<item>numéro quatre-vingt-douze<tag>out.vlcFile="plugins/sourates/mp3/92.mp3";</tag></item>
+
+<item>Le jour montant<tag>out.vlcFile="plugins/sourates/mp3/93.mp3";</tag></item>
+<item>Ad-Duha<tag>out.vlcFile="plugins/sourates/mp3/93.mp3";</tag></item>
+<item>numéro quatre-vingt-treize<tag>out.vlcFile="plugins/sourates/mp3/93.mp3";</tag></item>
+
+	<item>L'ouverture<tag>out.vlcFile="plugins/sourates/mp3/94.mp3";</tag></item>
+	<item>As-Sarh<tag>out.vlcFile="plugins/sourates/mp3/94.mp3";</tag></item>
+<item>numéro quatre-vingt-quatorze<tag>out.vlcFile="plugins/sourates/mp3/94.mp3";</tag></item>
+
+<item>Le figuier<tag>out.vlcFile="plugins/sourates/mp3/95.mp3";</tag></item>
+<item>At-Tin<tag>out.vlcFile="plugins/sourates/mp3/95.mp3";</tag></item>
+<item>numéro quatre-vingt-quinze<tag>out.vlcFile="plugins/sourates/mp3/95.mp3";</tag></item>
+
+<item>L'adhÃ©rence<tag>out.vlcFile="plugins/sourates/mp3/96.mp3";</tag></item>
+<item>Al-Alaq<tag>out.vlcFile="plugins/sourates/mp3/96.mp3";</tag></item>
+<item>numéro quatre-vingt-seize<tag>out.vlcFile="plugins/sourates/mp3/96.mp3";</tag></item>
+
+<item>La DestinÃ©e<tag>out.vlcFile="plugins/sourates/mp3/97.mp3";</tag></item>
+<item>Al-Qadr<tag>out.vlcFile="plugins/sourates/mp3/97.mp3";</tag></item>
+<item>numéro quatre-vingt-dix-sept<tag>out.vlcFile="plugins/sourates/mp3/97.mp3";</tag></item>
+
+<item>La preuve<tag>out.vlcFile="plugins/sourates/mp3/98.mp3";</tag></item>
+<item>Al-Bayyinah<tag>out.vlcFile="plugins/sourates/mp3/98.mp3";</tag></item>
+<item>numéro quatre-vingt-dix-huit<tag>out.vlcFile="plugins/sourates/mp3/98.mp3";</tag></item>
+
+<item>La secousse<tag>out.vlcFile="plugins/sourates/mp3/99.mp3";</tag></item>
+<item>Az-Zalzalah<tag>out.vlcFile="plugins/sourates/mp3/99.mp3";</tag></item>
+<item>numéro quatre-vingt-dix-neuf<tag>out.vlcFile="plugins/sourates/mp3/99.mp3";</tag></item>
+
+<item>Les coursiers<tag>out.vlcFile="plugins/sourates/mp3/100.mp3";</tag></item>
+<item>Al-Adiyate<tag>out.vlcFile="plugins/sourates/mp3/100.mp3";</tag></item>
+<item>numéro cent<tag>out.vlcFile="plugins/sourates/mp3/100.mp3";</tag></item>
+
+	<item>Le fracas<tag>out.vlcFile="plugins/sourates/mp3/101.mp3";</tag></item>
+	<item>Al-Qariah<tag>out.vlcFile="plugins/sourates/mp3/101.mp3";</tag></item>
+<item>numéro cent-un<tag>out.vlcFile="plugins/sourates/mp3/101.mp3";</tag></item>
+
+	<item>La course aux richesses<tag>out.vlcFile="plugins/sourates/mp3/102.mp3";</tag></item>
+	<item>At-Takatur <tag>out.vlcFile="plugins/sourates/mp3/102.mp3";</tag></item>
+<item>numéro cent-deux<tag>out.vlcFile="plugins/sourates/mp3/102.mp3";</tag></item>
+
+<item>le temps<tag>out.vlcFile="plugins/sourates/mp3/103.mp3";</tag></item>
+<item> Al-Asr <tag>out.vlcFile="plugins/sourates/mp3/103.mp3";</tag></item>
+<item>numéro cent-trois<tag>out.vlcFile="plugins/sourates/mp3/103.mp3";</tag></item>
+
+<item>les calomniateurs<tag>out.vlcFile="plugins/sourates/mp3/104.mp3";</tag></item>
+<item> Al-Humazah <tag>out.vlcFile="plugins/sourates/mp3/104.mp3";</tag></item>
+<item>numéro cent-quatre<tag>out.vlcFile="plugins/sourates/mp3/104.mp3";</tag></item>
+
+<item>L'Ã©lÃ©phant<tag>out.vlcFile="plugins/sourates/mp3/105.mp3";</tag></item>
+<item>Al-Fil<tag>out.vlcFile="plugins/sourates/mp3/105.mp3";</tag></item>
+<item>numéro cent-cinq<tag>out.vlcFile="plugins/sourates/mp3/105.mp3";</tag></item>
+
+<item>CoraÃ¯sh <tag>out.vlcFile="plugins/sourates/mp3/106.mp3";</tag></item>
+<item>numéro cent-six<tag>out.vlcFile="plugins/sourates/mp3/106.mp3";</tag></item>
+
+<item>L'ustensile<tag>out.vlcFile="plugins/sourates/mp3/107.mp3";</tag></item>
+<item>Al-Maoun<tag>out.vlcFile="plugins/sourates/mp3/107.mp3";</tag></item>
+<item>numéro cent-sept<tag>out.vlcFile="plugins/sourates/mp3/107.mp3";</tag></item>
+
+<item>L'abondance<tag>out.vlcFile="plugins/sourates/mp3/108.mp3";</tag></item>
+<item>Al-Kawssal<tag>out.vlcFile="plugins/sourates/mp3/108.mp3";</tag></item>
+<item>numéro cent-huit<tag>out.vlcFile="plugins/sourates/mp3/108.mp3";</tag></item>
+
+<item>Les infidÃ¨les<tag>out.vlcFile="plugins/sourates/mp3/109.mp3";</tag></item>
+<item>Al-Kafirune<tag>out.vlcFile="plugins/sourates/mp3/109.mp3";</tag></item>
+<item>numéro cent-neuf<tag>out.vlcFile="plugins/sourates/mp3/109.mp3";</tag></item>
+
+<item>AN-NASR<tag>out.vlcFile="plugins/sourates/mp3/110.mp3";</tag></item>
+<item>LES SECOURS<tag>out.vlcFile="plugins/sourates/mp3/110.mp3";</tag></item>
+<item>numéro cent-dix<tag>out.vlcFile="plugins/sourates/mp3/110.mp3";</tag></item>
+
+<item>Les fibres<tag>out.vlcFile="plugins/sourates/mp3/111.mp3";</tag></item>
+<item>Al-Massad<tag>out.vlcFile="plugins/sourates/mp3/111.mp3";</tag></item>
+<item>numéro cent-onze<tag>out.vlcFile="plugins/sourates/mp3/111.mp3";</tag></item>
+
+<item>Le monothÃ©isme pur<tag>out.vlcFile="plugins/sourates/mp3/112.mp3";</tag></item>
+<item>Al-Irlass<tag>out.vlcFile="plugins/sourates/mp3/112.mp3";</tag></item>
+<item>numéro cent-douze<tag>out.vlcFile="plugins/sourates/mp3/112.mp3";</tag></item>
+
+<item>L'aube naissante<tag>out.vlcFile="plugins/sourates/mp3/113.mp3";</tag></item>
+<item>Al-Falaq<tag>out.vlcFile="plugins/sourates/mp3/113.mp3";</tag></item>
+<item>numéro cent-treize<tag>out.vlcFile="plugins/sourates/mp3/113.mp3";</tag></item>
+
+<item>Les hommes<tag>out.vlcFile="plugins/sourates/mp3/114.mp3";</tag></item>
+<item>An-Nass<tag>out.vlcFile="plugins/sourates/mp3/114.mp3";</tag></item>
+<item>numéro cent-quatorze<tag>out.vlcFile="plugins/sourates/mp3/114.mp3";</tag></item>
+	
+  </one-of>
+</rule>
+<!-- § Automatic Generation -->
+</grammar>

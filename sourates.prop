@@ -1,0 +1,11 @@
+{
+  "modules" : { 
+    "sourates"  : {
+      "description": "Sarah démarre le Coran",
+      "version": "1.0",
+      "type": "Coran",
+	  "Auteur": "Samir SEMAI",
+	  "Catégorie": "Islam"
+    }
+  }
+}
