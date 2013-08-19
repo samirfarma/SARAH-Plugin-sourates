@@ -10,14 +10,14 @@ switch (data._key) {
 			var spawn = require('child_process').spawn;
 			if (!data.vlcFile) {
 				
-				var vlc = spawn('C:\\Progra~2\\VideoLAN\\VLC\\vlc.exe ',['-I', 'http', '--http-host=localhost', '--http-port=8282', "/plugins//sourates/mp3/1.mp3"], { detached: true });
+				var vlc = spawn('C:\\Progra~2\\VideoLAN\\VLC\\vlc.exe ',['-I', 'http', '--http-host=localhost', '--http-port=8282', './plugins/sourates/mp3/1.mp3'], { detached: true });
 			}
 			else
 			{
-			var vlc = spawn('C:\\Progra~2\\VideoLAN\\VLC\\vlc.exe',['-I http --http-host=localhost', '--http-port=8282', data.vlcFile], { detached: true });
+			var vlc = spawn('C:\\Progra~2\\VideoLAN\\VLC\\vlc.exe ',['-I', 'http', '--http-host=localhost', '--http-port=8282', data.vlcFile], { detached: true });
 			}
 			// Callback with TTS
-			callback({'tts': "Bissmi lèh"});
+			callback({'tts': "Bissmi lèh "});
 
 			vlc.on('exit', function(code){
 			console.log('Exit code: ' + code); 
