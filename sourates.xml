@@ -3,13 +3,13 @@
     <tag>out.action=new Object(); </tag>
     <one-of>
       <item><ruleref uri="#ruleVLC"/><tag>out.action = rules.ruleVLC;</tag></item>
-      <item><ruleref uri="#ruleSerie"/><tag>out.action = rules.ruleSerie;</tag></item>
+      <item><ruleref uri="#ruleSourates"/><tag>out.action = rules.ruleSourates;</tag></item>
     </one-of>
     <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/plugins/sourates";</tag>
   </rule>
   
     <rule id="ruleVLC">
-    <example>Sarah Démarre VLC </example>
+    <example>Sarah Démarre le Coran </example>
 	<item weight="7">Sarah</item>
 	<one-of>
 		<item>Démarre<tag>out._key="RunVLC";</tag></item>
@@ -36,10 +36,10 @@
 		<item>moins 1 minute<tag>out._key="Back60";</tag></item>
 		
 	</one-of>
-	<item weight="7">le coran</item>
+	<item weight="7">le Coran</item>
   </rule>
  
-  <rule id="ruleSerie">
+  <rule id="ruleSourates">
 	<example>écouter une sourate</example>
 	<item weight="7">Sarah</item>
     <one-of>
@@ -57,13 +57,10 @@
     <item>fati ha<tag>out.vlcFile="./plugins/sourates/mp3/1.mp3";</tag></item>
     <item>numéro une<tag>out.vlcFile="./plugins/sourates/mp3/1.mp3";</tag></item>
 	
-    <item>la vache<tag>out.vlcFile="./plugins/sourates/mp3/2_1.mp3";</tag></item>
-	<item>la vache première partie<tag>out.vlcFile="./plugins/sourates/mp3/2_1.mp3";</tag></item>
-    <item>baqala<tag>out.vlcFile="./plugins/sourates/mp3/2_1.mp3";</tag></item>
-	<item>baqara première partie<tag>out.vlcFile="./plugins/sourates/mp3/2_1.mp3";</tag></item>
-    <item>numéro deux<tag>out.vlcFile="./plugins/sourates/mp3/2_1.mp3";</tag></item>
-	<item>numéro deux premère partie<tag>out.vlcFile="./plugins/sourates/mp3/2_1.mp3";</tag></item>
-	
+    <item>la vache<tag>out.vlcFile="./plugins/sourates/mp3/2.mp3";</tag></item>
+    <item>baqala<tag>out.vlcFile="./plugins/sourates/mp3/2.mp3";</tag></item> 
+    <item>numéro deux<tag>out.vlcFile="./plugins/sourates/mp3/2.mp3";</tag></item>
+    
 	<item>la vache deuxième partie<tag>out.vlcFile="./plugins/sourates/mp3/2_2.mp3";</tag></item>
     <item>baqala deuxième partie<tag>out.vlcFile="./plugins/sourates/mp3/2_2.mp3";</tag></item>
     <item>numéro deux deuxième partie<tag>out.vlcFile="./plugins/sourates/mp3/2_2.mp3";</tag></item>
